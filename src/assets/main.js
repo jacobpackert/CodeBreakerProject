@@ -12,7 +12,7 @@ function guess() {
       return false;
     }
     else {
-      attempt.value+= 1;
+      attempt.value++;
     }
 }
 
