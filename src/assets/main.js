@@ -30,7 +30,7 @@ function setMessage(message){
 }
 
 function validateInput(input){
-  if(input.tostring().length == 4){
+  if(input.toString().length == 4){
     return true;
   }
   else {
