@@ -11,7 +11,7 @@ function guess() {
     if(validateInput(input.value) === false){
       return false;
     }
-    else {
+    else if(validateInput(input.value) === true){
       attempt.value++;
     }
 }
