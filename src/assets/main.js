@@ -8,6 +8,12 @@ function guess() {
     if(answer === '' || attempt === ''){
       setHiddenFields();
     }
+    if(!validateInput(input.value)){
+      return false;
+    }
+    else {
+      attempt+= 1;
+    }
 }
 
 //implement new functions here
@@ -22,4 +28,14 @@ function setHiddenFields(){
 
 function setMessage(message){
   document.getElementById('message').innerHTML = message;
+}
+
+function validateInput(input){
+  if(input.length == 4){
+    return true;
+  }
+  else {
+    setMessage("Guesses must be exactly 4 characters long.");
+    return false;
+  }
 }
