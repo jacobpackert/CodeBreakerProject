@@ -9,7 +9,7 @@ function guess() {
 
 //implement new functions here
 function setHiddenFields(){
-  let randomNumber = Math.random*9999;
+  let randomNumber = Math.random()*9999;
   answer = Math.floor(randomNumber);
   while (answer.length < 4){
     answer = answer.toString;
