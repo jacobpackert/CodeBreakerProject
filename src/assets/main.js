@@ -17,7 +17,7 @@ function guess() {
 
 //implement new functions here
 function setHiddenFields(){
-  answer.value = Math.floor(Math.random()*9999);
+  answer.value = Math.floor(Math.random()*10000);
   answer.value = answer.value.toString();
   while (answer.value.length < 4){
     answer.value = "0" + answer.value;
@@ -41,14 +41,17 @@ function validateInput(input){
 
 function getResults(input){
 
-  var feedback = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">';
-  for(var i = 0; i < 4; i++){
+  let feedback = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">';
+  for(i = 0; i < input.length; i++){
+    // checking to see if a character has the exact same value as the same character in the answer
     if(answer.value.charAt(i) == input.charAt(i)) {
       feedback += '<span class="glyphicon glyphicon-ok"></span>';
     }
-    else if (answer.value.indexOf(input.charAt(i))) {
+    // checking if a character in the input/user guess is even part of the actual answer
+    else if (answer.value.indexOf(input.charAt(i)) > -1) {
       feedback += '<span class="glyphicon glyphicon-transfer"></span>';
     }
+    // if the character is not in the right place or even a part of the string, then it is an error
     else {
       feedback += '<span class="glyphicon glyphicon-remove"></span>';
     }
