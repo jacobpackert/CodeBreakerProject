@@ -14,8 +14,12 @@ function guess() {
       attempt.value++;
     }
     getResults(input);
-    if(getResults){
-      setMessage("You win! :)");
+
+    if(getResults(input.value)){
+      setMessage('You win! :)');
+    }
+    else if (attempt.value >= 10) {
+      setMessage('You lose! :(');
     }
 }
 
