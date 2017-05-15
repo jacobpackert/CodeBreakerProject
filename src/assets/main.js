@@ -43,10 +43,10 @@ function getResults(input){
 
   var feedback = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">';
   for(var i = 0; i < 4; i++){
-    if(answer.value.charAt(i) == input.value.charAt(i)) {
+    if(answer.value.charAt(i) == input.charAt(i)) {
       feedback += '<span class="glyphicon glyphicon-ok"></span>';
     }
-    else if (answer.value.indexOf(input.value.charAt(i))) {
+    else if (answer.value.indexOf(input.charAt(i))) {
       feedback += '<span class="glyphicon glyphicon-transfer"></span>';
     }
     else {
@@ -55,4 +55,5 @@ function getResults(input){
   }
   feedback += '</div></div>';
   document.getElementById('results').innerHTML = feedback;
+
 }
