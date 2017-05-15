@@ -13,6 +13,10 @@ function guess() {
     } else {
       attempt.value++;
     }
+    getResults(input);
+    if(getResults){
+      setMessage("You win! :)");
+    }
 }
 
 //implement new functions here
@@ -42,10 +46,12 @@ function validateInput(input){
 function getResults(input){
 
   let feedback = '<div class="row"><span class="col-md-6">' + input + '</span><div class="col-md-6">';
+  let correct = 0;
   for(i = 0; i < input.length; i++){
     // checking to see if a character has the exact same value as the same character in the answer
     if(answer.value.charAt(i) == input.charAt(i)) {
       feedback += '<span class="glyphicon glyphicon-ok"></span>';
+      correct++;
     }
     // checking if a character in the input/user guess is even part of the actual answer
     else if (answer.value.indexOf(input.charAt(i)) > -1) {
@@ -58,5 +64,10 @@ function getResults(input){
   }
   feedback += '</div></div>';
   document.getElementById('results').innerHTML = feedback;
-
+if(correct == input.length){
+  return true;
+}
+else {
+  return false;
+}
 }
