@@ -15,11 +15,14 @@ function guess() {
     }
     // getResults(input);
 
-    if(getResults(input.value)){
-      setMessage('You win!');
+    if (getResults(input.value)){
+      setMessage('You Win! :)');
     }
     else if (attempt.value >= 10) {
-      setMessage('You lose!');
+      setMessage('You Lose!');
+    }
+    else {
+      setMessage("Incorrect, try again");
     }
 }
 
@@ -68,7 +71,7 @@ function getResults(input){
   }
   feedback += '</div></div>';
   document.getElementById('results').innerHTML = feedback;
-if(correct === input.length){
+if(correct == input.length){
   return true;
 }
 else {
