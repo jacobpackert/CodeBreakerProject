@@ -15,14 +15,14 @@ function guess() {
     }
     // getResults(input);
 
-    if (getResults(input.value)){
+    if (getResults(input.value)) {
       setMessage('You Win! :)');
     }
     else if (attempt.value >= 10) {
-      setMessage('You Lose!');
+      setMessage('You Lose! :(');
     }
     else {
-      setMessage("Incorrect, try again");
+      setMessage('Incorrect, try again.');
     }
 }
 
@@ -73,8 +73,24 @@ function getResults(input){
   document.getElementById('results').innerHTML = feedback;
 if(correct == input.length){
   return true;
-}
+    }
 else {
   return false;
+    }
 }
+
+
+function showAnswer(truefalse){
+  document.getElementById('code').innerHTML(answer);
+  if(truefalse){
+    document.getElementById('code').className(' succes');
+  }
+  else {
+    document.getElementById('code').className(' failure');
+  }
+}
+
+function showReplay(){
+  document.getElementById('guessing-div').setAttribute('style.display', 'none');
+  document.getElementById('replay-div').setAttribute('style.display', 'block');
 }
