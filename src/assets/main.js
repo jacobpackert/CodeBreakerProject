@@ -89,7 +89,7 @@ function showAnswer(truefalse){
     newClass = ' failure';
   }
   let codeClass = document.getElementById('code');
-  codeclass.className += newClass;
+  codeClass.className += newClass;
 }
 
 function showReplay(){
