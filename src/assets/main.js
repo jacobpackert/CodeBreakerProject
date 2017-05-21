@@ -84,12 +84,10 @@ function getResults(input) {
 function showAnswer(truefalse) {
   document.getElementById('code').innerHTML = answer.value;
   if (truefalse === true) {
-    newClass = ' succes';
+    document.getElementById('code').className += ' succes';
   } else {
-    newClass = ' failure';
+    document.getElementById('code').className +=  ' failure';
   }
-  let codeClass = document.getElementById('code');
-  codeClass.className += newClass;
 }
 
 function showReplay() {
