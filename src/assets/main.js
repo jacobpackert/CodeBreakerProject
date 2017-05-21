@@ -83,8 +83,8 @@ function getResults(input) {
 
 function showAnswer(truefalse) {
   document.getElementById('code').innerHTML = answer.value;
-  if (truefalse === true) {
-    document.getElementById('code').className += ' succes';
+  if (truefalse) {
+    document.getElementById('code').className += ' success';
   } else {
     document.getElementById('code').className +=  ' failure';
   }
