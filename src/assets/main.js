@@ -17,8 +17,12 @@ function guess() {
 
   if (getResults(input.value)) {
     setMessage('You Win! :)');
+    showAnswer(true);
+    showReplay();
   } else if (attempt.value >= 10) {
     setMessage('You Lose! :(');
+    showAnswer(false);
+    showReplay();
   } else {
     setMessage('Incorrect, try again.');
   }
@@ -31,7 +35,7 @@ function setHiddenFields() {
   while (answer.value.length < 4) {
     answer.value = "0" + answer.value;
   }
-  attempt = 0;
+  attempt.value = 0;
 }
 
 function setMessage(message) {
@@ -78,8 +82,8 @@ function getResults(input) {
 
 
 function showAnswer(truefalse) {
-  document.getElementById('code').innerHTML = answer;
-  if (truefalse) {
+  document.getElementById('code').innerHTML = answer.value;
+  if (truefalse === true) {
     newClass = ' succes';
   } else {
     newClass = ' failure';
