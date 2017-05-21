@@ -81,16 +81,18 @@ else {
 
 
 function showAnswer(truefalse){
-  document.getElementById('code').innerHTML(answer);
+  document.getElementById('code').innerHTML = answer;
   if(truefalse){
-    document.getElementById('code').className(' succes');
+    newClass = ' succes';
   }
   else {
-    document.getElementById('code').className(' failure');
+    newClass = ' failure';
   }
+  let codeClass = document.getElementById('code');
+  codeclass.className += newClass;
 }
 
 function showReplay(){
-  document.getElementById('guessing-div').setAttribute('style.display', 'none');
-  document.getElementById('replay-div').setAttribute('style.display', 'block');
+  document.getElementById('guessing-div').setAttribute('style', 'display: none');
+  document.getElementById('replay-div').setAttribute('style', 'display: block');
 }
